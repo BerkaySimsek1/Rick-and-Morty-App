@@ -23,9 +23,12 @@ struct CharacterRow: View {
                 } placeholder: {
                     ProgressView()
                 }
+                
                 Text(character.name)
+                    .multilineTextAlignment(.center)
                     .bold()
                     .font(.title2)
+                
                 Text(character.status)
                     .font(.headline)
                     .foregroundStyle(getTextColor(for: character.status))
@@ -33,8 +36,8 @@ struct CharacterRow: View {
                 Text(character.location.name)
                     .multilineTextAlignment(.center)
                     .frame(width: 150)
-            }.frame(width: 170, height: 300)
-        }.background(.purple.opacity(0.4))
+            }.frame(width: 170, height: 270)
+        }.background(Color(hex: 0xfff8bd91).opacity(0.5))
             .clipShape(RoundedRectangle(cornerRadius: 20))
     }
     

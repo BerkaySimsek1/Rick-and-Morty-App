@@ -9,8 +9,8 @@ import Foundation
 class Service: ObservableObject {
     static let baseUrl = "https://rickandmortyapi.com/api/"
     
-    func fetchCharacter(page: Int = 1, filter: String = "", endpoint: endpointType, completion: @escaping (Result<CharacterResponse, ServiceError>) -> Void) {
-        guard let url = URL(string: Service.baseUrl + endpoint.apiTypeString + "/?page=" + String(page) + "&status=" + filter ) else {
+    func fetchCharacter(page: Int = 1, charName: String, status: String = "", endpoint: endpointType, completion: @escaping (Result<CharacterResponse, ServiceError>) -> Void) {
+        guard let url = URL(string: Service.baseUrl + endpoint.apiTypeString + "/?page=" + String(page) + "&status=" + status + "&name=" + charName) else {
             completion(.failure(.urlError))
             return
         }
@@ -28,9 +28,6 @@ class Service: ObservableObject {
             }
             
             do {
-                if let jsonString = String(data: data, encoding: .utf8) {
-                                   print("JSON Response: \(jsonString)")
-                               }
                                
                 let response = try JSONDecoder().decode(CharacterResponse.self, from: data)
                                completion(.success(response))

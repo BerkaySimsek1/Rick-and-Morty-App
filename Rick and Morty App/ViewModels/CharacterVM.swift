@@ -23,23 +23,23 @@ class CharacterViewModel: ObservableObject {
     private var currentPage = 1
     private var totalPages = 0
     private var isFetching = false
-    private var filter: String = ""
+    private var status: String = ""
+    private var charName: String = ""
     
-    func loadCharacters(filter: String = "") {
+    func loadCharacters(status: String = "", charName: String = "") {
         guard !isFetching else { return }
+        
+        if self.status != status || self.charName != charName {
+            resetState()
+            self.status = status
+            self.charName = charName
+        }
         
         loading = true
         isFetching = true
         errorMessage = nil
         
-        // If a new filter is applied, reset pagination
-        if self.filter != filter {
-            self.filter = filter
-            currentPage = 1
-            characters.removeAll()
-        }
-        
-        service.fetchCharacter(page: currentPage, filter: filter, endpoint: .character) { [weak self] result in
+        service.fetchCharacter(page: currentPage, charName: charName, status: status, endpoint: .character) { [weak self] result in
             DispatchQueue.main.async {
                 self?.loading = false
                 self?.isFetching = false
@@ -65,16 +65,21 @@ class CharacterViewModel: ObservableObject {
         }
     }
     
+    func resetState() {
+        currentPage = 1
+        characters.removeAll()
+        totalPages = 0
+    }
+    
     func loadMoreIfNeeded(currentItem character: Character?) {
-        // Check if we need to load more characters
         guard let character = character else {
-            loadCharacters(filter: filter)
+            loadCharacters(status: status, charName: charName)
             return
         }
         
         let thresholdIndex = characters.index(characters.endIndex, offsetBy: -5)
         if characters.firstIndex(where: { $0.id == character.id }) == thresholdIndex {
-            loadCharacters(filter: filter)
+            loadCharacters(status: status, charName: charName)
         }
     }
 }
