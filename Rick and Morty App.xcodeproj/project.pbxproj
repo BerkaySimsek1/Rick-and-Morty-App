@@ -20,6 +20,7 @@
 		CE95D3B72C57D3E2005B1C47 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D3B62C57D3DE005B1C47 /* Endpoint.swift */; };
 		CE95D3BB2C57F696005B1C47 /* CharacterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D3BA2C57F692005B1C47 /* CharacterVM.swift */; };
 		CE95D3BD2C57F75C005B1C47 /* CharacterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D3BC2C57F75C005B1C47 /* CharacterRow.swift */; };
+		CE95D3BF2C5924EB005B1C47 /* CharacterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D3BE2C5924EB005B1C47 /* CharacterPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		CE95D3B62C57D3DE005B1C47 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		CE95D3BA2C57F692005B1C47 /* CharacterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterVM.swift; sourceTree = "<group>"; };
 		CE95D3BC2C57F75C005B1C47 /* CharacterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRow.swift; sourceTree = "<group>"; };
+		CE95D3BE2C5924EB005B1C47 /* CharacterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				CE95D3842C57C751005B1C47 /* CharacterView.swift */,
 				CE95D3BC2C57F75C005B1C47 /* CharacterRow.swift */,
+				CE95D3BE2C5924EB005B1C47 /* CharacterPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				CE95D3852C57C751005B1C47 /* CharacterView.swift in Sources */,
 				CE95D3BB2C57F696005B1C47 /* CharacterVM.swift in Sources */,
 				CE95D3B72C57D3E2005B1C47 /* Endpoint.swift in Sources */,
+				CE95D3BF2C5924EB005B1C47 /* CharacterPickerView.swift in Sources */,
 				CE95D3832C57C751005B1C47 /* Rick_and_Morty_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

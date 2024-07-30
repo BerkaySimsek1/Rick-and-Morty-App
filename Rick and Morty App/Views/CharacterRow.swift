@@ -28,7 +28,7 @@ struct CharacterRow: View {
                     .font(.title2)
                 Text(character.status)
                     .font(.headline)
-                    .foregroundStyle(character.status == "Alive" ? .green : .red)
+                    .foregroundStyle(getTextColor(for: character.status))
                 
                 Text(character.location.name)
                     .multilineTextAlignment(.center)
@@ -37,6 +37,17 @@ struct CharacterRow: View {
         }.background(.purple.opacity(0.4))
             .clipShape(RoundedRectangle(cornerRadius: 20))
     }
+    
+    func getTextColor(for status: String) -> Color {
+            switch status {
+            case "Alive":
+                return .green
+            case "Dead":
+                return .red
+            default:
+                return .gray // Default color if no match
+            }
+        }
 }
 
 struct CharacterModel_Previews: PreviewProvider {

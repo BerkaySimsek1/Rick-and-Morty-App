@@ -9,8 +9,8 @@ import Foundation
 class Service: ObservableObject {
     static let baseUrl = "https://rickandmortyapi.com/api/"
     
-    func fetchCharacter(filter: String, endpoint: endpointType, completion: @escaping (Result<CharacterResponse, ServiceError>) -> Void) {
-        guard let url = URL(string: Service.baseUrl + endpoint.apiTypeString) else {
+    func fetchCharacter(page: Int = 1, filter: String = "", endpoint: endpointType, completion: @escaping (Result<CharacterResponse, ServiceError>) -> Void) {
+        guard let url = URL(string: Service.baseUrl + endpoint.apiTypeString + "/?page=" + String(page) + "&status=" + filter ) else {
             completion(.failure(.urlError))
             return
         }
