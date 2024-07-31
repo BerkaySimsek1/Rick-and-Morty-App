@@ -26,6 +26,8 @@ struct CharacterView: View {
                             .onAppear {
                                 viewModel.loadMoreIfNeeded(currentItem: character)
                             }
+                        
+                            .transition(.opacity.combined(with: .scale))
                     }
                     
                     if viewModel.loading {
@@ -33,7 +35,7 @@ struct CharacterView: View {
                             .frame(maxWidth: .infinity)
                             .padding()
                     }
-                }
+                }.animation(.linear, value: viewModel.characters)
             }
             .onAppear {
                 viewModel.loadCharacters(status: "")

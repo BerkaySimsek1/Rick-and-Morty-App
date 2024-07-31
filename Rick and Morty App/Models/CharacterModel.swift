@@ -15,7 +15,7 @@ struct Info: Codable {
 }
 
 // MARK: - Character
-struct Character: Codable,Identifiable {
+struct Character: Codable,Identifiable, Equatable {
     let id: Int
     let name: String
     let status: String
@@ -31,7 +31,7 @@ struct Character: Codable,Identifiable {
 }
 
 // MARK: - Location
-struct Location: Codable {
+struct Location: Codable, Equatable {
     let name: String
     let url: String
 }

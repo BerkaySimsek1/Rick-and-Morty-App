@@ -23,6 +23,9 @@
 		CE95D3BF2C5924EB005B1C47 /* CharacterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D3BE2C5924EB005B1C47 /* CharacterPickerView.swift */; };
 		CE95D3C22C5954F2005B1C47 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D3C12C5954EE005B1C47 /* ColorHex.swift */; };
 		CE95D3C62C595BBA005B1C47 /* CustomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D3C52C595BBA005B1C47 /* CustomToolbar.swift */; };
+		CE95D3C92C5A3E8B005B1C47 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D3C82C5A3E8B005B1C47 /* TabBarView.swift */; };
+		CE95D3CD2C5A3F01005B1C47 /* EpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D3CC2C5A3F01005B1C47 /* EpisodeView.swift */; };
+		CE95D3CF2C5A3F0A005B1C47 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D3CE2C5A3F0A005B1C47 /* LocationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		CE95D3BE2C5924EB005B1C47 /* CharacterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPickerView.swift; sourceTree = "<group>"; };
 		CE95D3C12C5954EE005B1C47 /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
 		CE95D3C52C595BBA005B1C47 /* CustomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolbar.swift; sourceTree = "<group>"; };
+		CE95D3C82C5A3E8B005B1C47 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		CE95D3CC2C5A3F01005B1C47 /* EpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeView.swift; sourceTree = "<group>"; };
+		CE95D3CE2C5A3F0A005B1C47 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,9 +176,10 @@
 		CE95D3B82C57F679005B1C47 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE95D3842C57C751005B1C47 /* CharacterView.swift */,
-				CE95D3BC2C57F75C005B1C47 /* CharacterRow.swift */,
-				CE95D3BE2C5924EB005B1C47 /* CharacterPickerView.swift */,
+				CE95D3CB2C5A3EDD005B1C47 /* LocationView */,
+				CE95D3CA2C5A3ED7005B1C47 /* EpisodeView */,
+				CE95D3C72C5A3E73005B1C47 /* CharacterView */,
+				CE95D3C82C5A3E8B005B1C47 /* TabBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +199,32 @@
 				CE95D3C52C595BBA005B1C47 /* CustomToolbar.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CE95D3C72C5A3E73005B1C47 /* CharacterView */ = {
+			isa = PBXGroup;
+			children = (
+				CE95D3842C57C751005B1C47 /* CharacterView.swift */,
+				CE95D3BC2C57F75C005B1C47 /* CharacterRow.swift */,
+				CE95D3BE2C5924EB005B1C47 /* CharacterPickerView.swift */,
+			);
+			path = CharacterView;
+			sourceTree = "<group>";
+		};
+		CE95D3CA2C5A3ED7005B1C47 /* EpisodeView */ = {
+			isa = PBXGroup;
+			children = (
+				CE95D3CC2C5A3F01005B1C47 /* EpisodeView.swift */,
+			);
+			path = EpisodeView;
+			sourceTree = "<group>";
+		};
+		CE95D3CB2C5A3EDD005B1C47 /* LocationView */ = {
+			isa = PBXGroup;
+			children = (
+				CE95D3CE2C5A3F0A005B1C47 /* LocationView.swift */,
+			);
+			path = LocationView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +360,7 @@
 				CE95D3B52C57C9AB005B1C47 /* ServiceError.swift in Sources */,
 				CE95D3C22C5954F2005B1C47 /* ColorHex.swift in Sources */,
 				CE95D3AF2C57C82A005B1C47 /* CharacterModel.swift in Sources */,
+				CE95D3CD2C5A3F01005B1C47 /* EpisodeView.swift in Sources */,
 				CE95D3BD2C57F75C005B1C47 /* CharacterRow.swift in Sources */,
 				CE95D3B32C57C8DB005B1C47 /* Service.swift in Sources */,
 				CE95D3852C57C751005B1C47 /* CharacterView.swift in Sources */,
@@ -334,6 +368,8 @@
 				CE95D3B72C57D3E2005B1C47 /* Endpoint.swift in Sources */,
 				CE95D3BF2C5924EB005B1C47 /* CharacterPickerView.swift in Sources */,
 				CE95D3C62C595BBA005B1C47 /* CustomToolbar.swift in Sources */,
+				CE95D3CF2C5A3F0A005B1C47 /* LocationView.swift in Sources */,
+				CE95D3C92C5A3E8B005B1C47 /* TabBarView.swift in Sources */,
 				CE95D3832C57C751005B1C47 /* Rick_and_Morty_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

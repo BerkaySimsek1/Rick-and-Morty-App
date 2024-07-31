@@ -10,18 +10,29 @@ import SwiftUI
 struct CharacterRow: View {
     
     let character: Character
+    @State var isFavorite = false
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             VStack {
-                AsyncImage(url: URL(string: character.image)) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                } placeholder: {
-                    ProgressView()
+                ZStack(alignment: .top) {
+                    Spacer()
+                    AsyncImage(url: URL(string: character.image)) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 100, height: 100)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    Spacer()
+                    HStack{
+                        Spacer()
+                        Button("", systemImage: isFavorite ? "star.fill" : "star") {
+                            isFavorite.toggle()
+                        }.foregroundColor(isFavorite ? .yellow : .black)
+                    }
                 }
                 
                 Text(character.name)
@@ -36,6 +47,7 @@ struct CharacterRow: View {
                 Text(character.location.name)
                     .multilineTextAlignment(.center)
                     .frame(width: 150)
+                
             }.frame(width: 170, height: 270)
         }.background(Color(hex: 0xfff8bd91).opacity(0.5))
             .clipShape(RoundedRectangle(cornerRadius: 20))
