@@ -22,12 +22,13 @@ struct CharacterView: View {
                 
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(viewModel.characters) { character in
-                        CharacterRow(character: character)
-                            .onAppear {
-                                viewModel.loadMoreIfNeeded(currentItem: character)
-                            }
-                        
-                            .transition(.opacity.combined(with: .scale))
+                        NavigationLink(destination: CharacterDetailView(character: character)) {
+                            CharacterRow(character: character)
+                                .onAppear {
+                                    viewModel.loadMoreIfNeeded(currentItem: character)
+                                }
+                                .transition(.opacity.combined(with: .scale))
+                        }
                     }
                     
                     if viewModel.loading {
@@ -58,8 +59,7 @@ struct CharacterView: View {
                     
                 }
             }
-            .toolbarBackground(Color(hex: 0xff3a4767), for:
-                    .navigationBar)
+            .toolbarBackground(Color(hex: 0xff3a4767), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .searchable(text: $searchText, prompt: "Search characters")
             .alert(item: $viewModel.errorMessage) { errorMessage in
