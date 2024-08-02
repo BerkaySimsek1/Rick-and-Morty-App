@@ -23,7 +23,7 @@ struct TabBarView: View {
             }
         }.onAppear() {
             
-            UITabBar.appearance().barTintColor = UIColor(Color(hex: 0xff3a4767))
+            UITabBar.appearance().barTintColor = UIColor(Constants.backgroundColor)
         }
 
         .tint(.purple)

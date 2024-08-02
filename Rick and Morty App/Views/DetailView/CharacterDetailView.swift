@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CharacterDetailView: View {
     let character: Character
+    @State var isFavorite = false
     @StateObject private var episodesVM: EpisodeVM
     
     init(character: Character) {
@@ -20,14 +21,30 @@ struct CharacterDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                AsyncImage(url: URL(string: character.image)) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.main.bounds.width)
-                } placeholder: {
-                    ProgressView()
+                ZStack(alignment: .topTrailing) {
+                    AsyncImage(url: URL(string: character.image)) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: UIScreen.main.bounds.width)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    
+                    Button(action: {
+                        isFavorite.toggle()
+                    }) {
+                        Image(systemName: isFavorite ? "star.fill" : "star").resizable()
+                            .foregroundColor(isFavorite ? .yellow : .black)
+                            .frame(width: 30, height: 30) // Set frame size
+                    }
+                    .padding()
+                    .background(Color(.gray).opacity(0.7))
+                    .padding(.top, 20)
+                    .padding(.trailing)
+                    
                 }
+                
                 
                 Text(character.name)
                     .foregroundColor(.white)
@@ -68,7 +85,7 @@ struct CharacterDetailView: View {
                 }
             }
         }
-        .background(.blue)
+        .background(Constants.backgroundColor)
         .ignoresSafeArea()
         .onAppear {
             episodesVM.initialize(character: character)

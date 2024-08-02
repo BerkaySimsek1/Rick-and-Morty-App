@@ -54,12 +54,12 @@ struct CharacterView: View {
                             .foregroundColor(.white)
                             .font(.largeTitle)
                             .bold()
-                            .background(Color(hex: 0xff3a4767))
+                            .background(Constants.backgroundColor)
                     }
                     
                 }
             }
-            .toolbarBackground(Color(hex: 0xff3a4767), for: .navigationBar)
+            .toolbarBackground(Constants.backgroundColor, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .searchable(text: $searchText, prompt: "Search characters")
             .alert(item: $viewModel.errorMessage) { errorMessage in
@@ -70,7 +70,7 @@ struct CharacterView: View {
                 )
             }
             .foregroundColor(.white)
-            .background(Color(hex: 0xff3a4767))
+            .background(Constants.backgroundColor)
         }.tint(.white)
     }
 }
