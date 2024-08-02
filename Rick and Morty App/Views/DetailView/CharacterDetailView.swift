@@ -73,6 +73,7 @@ struct CharacterDetailView: View {
                                     .background(.red)
                                     
                                 Text(episode.name)
+                                    .lineLimit(1)
                                     .padding(.leading, 10)
                                     
                                     .frame(width: 100)

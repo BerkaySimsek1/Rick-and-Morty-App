@@ -7,11 +7,12 @@
 
 import SwiftUI
 
+
 @main
 struct Rick_and_Morty_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            CharacterView()
         }
     }
 }
